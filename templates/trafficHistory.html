@@ -1,0 +1,27 @@
+<div ng-controller="trafficHistory">
+	<header id="trafficheader">
+		<h2 id="pageTitle">Traffic Log</h2><span id="logOutButton" ui-sref="login">Log Out</span>
+	</header>
+	<div class="container">
+		<section id=trafficTable>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+					<th>Name</th>
+					<th>Traffic Query</th>
+					<th>Date</th>
+					<th>Time</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="user in users">
+					<td>{{user.name}}</td>
+					<td>{{user.traffic}}</td>
+					<td>{{user.date}}</td>
+					<td>{{user.time}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</div>
+</div>
