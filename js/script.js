@@ -12,6 +12,11 @@ myApp.config(function($stateProvider,$urlRouterProvider) {
     	templateUrl:'../templates/trafficHistory.html'
     })
 
+    $stateProvider.state('status',{
+    	url:'/status',
+    	templateUrl:'../templates/status.html'
+    })
+
 });
 
 myApp.controller('login', ['$scope','$http','$state','$location','$timeout',function($scope,$http,$state,$location,$timeout){
@@ -38,4 +43,11 @@ myApp.controller('trafficHistory', ['$scope','$location','$http','$rootScope','$
 	})
 
 }]);
+
+myApp.controller('status', ['$scope','$location','$http','$rootScope','$state', function($scope,$location,$http,$rootScope,$state){
+
+
+}]);
+
+
 

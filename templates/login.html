@@ -1,30 +1,23 @@
-<div class="container">
-	<div id="loginPageContainer" class="centered" ng-controller="login">
-		<!-- Web Intro -->
-		<div id="welcomeLogIn">
-			<p id="welcomeP">Foot trafficking for the Cube</p>
-			<img id="txtLogo" width=60% src="http://exploringtech.org/sites/default/files/logo.png"/>
+<div id="loginPageContainer" class="centered" ng-controller="login">
+	<!-- Web Intro -->
+	<div id="welcomeLogIn">
+
+		<div id="divLogin">
+			<img id="txtLogo" src="../images/Group.png"/>
+			<p id="welcomeP">Foot traffic for the Cube</p>
 		</div>
-		<!-- Login Section -->
-		<div id="loginContainer">
-			<label id="loginWelcome">Welcome to the [product name]</label>
-			<div class="form-group">
-				<div class="cols-sm-10">
+
+	</div>
+	<!-- Login Section -->
+	<div id="loginContainer">
+		<div id="loginInputContainer">
+			<label id="loginWelcome">Welcome</label>
 					<div class="input-group">
-						<span class="input-group-addon logInIcon"><i class="glyphicon glyphicon-user white" aria-hidden="true"></i></span>
 						<input type="text" class="form-control" name="username" id="username"  placeholder="Username"/>
 					</div>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<div class="cols-sm-10">
 					<div class="input-group">
-						<span class="input-group-addon logInIcon"><i class="glyphicon glyphicon-asterisk white" aria-hidden="true"></i></span>
 						<input type="password" class="form-control" name="password" id="password"  placeholder="Password"/>
 					</div>
-				</div>
-			</div>
 			<button id="logIn">Log In</button>
 		</div>
 	</div>

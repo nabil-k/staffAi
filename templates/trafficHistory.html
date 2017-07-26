@@ -1,6 +1,15 @@
 <div ng-controller="trafficHistory">
 	<header id="trafficheader">
-		<h2 id="pageTitle">Traffic Log</h2><span id="logOutButton" ui-sref="login">Log Out</span>
+		<!-- Searchbar -->
+		<div id="searchBarDiv">
+			<i id="searchIcon" class="fa fa-search" aria-hidden="true"></i>
+			<input id="searchbar" type="text">
+		</div>
+		<!-- logOut button-->
+		<span id="logOutButton" ui-sref="login">Log Out</span>
+		<!-- TxT Logo -->
+		<img id="trafficLogo" src="../images/Group.png"/>
+
 	</header>
 	<div class="container">
 		<section id=trafficTable>

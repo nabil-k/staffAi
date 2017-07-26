@@ -1,15 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400');
+
 body{
 	margin: 0px;
 	background-color: #fff;
 }
 
+.search {
+	position: relative;
+}
+
+.table{
+	border-bottom: #FF7733 !important;
+}
+
+.search input { 
+	text-indent: 30px;
+}
+
+#trafficLogo{
+	width: 10%;
+	float:left;
+}
+
+.search .fa-search { 
+  position: absolute;
+  top: 24px;
+  left: 7px;
+  font-size: 15px;
+}
+
+.fa-search{
+    color:#FF7733;
+    padding: 1px;
+ }
+
 #trafficheader{
-	background-color: #70C8F0;
-	border-color: #70C8F0;
+	background-color: #FF7733;
+	border-color: #FF7733;
 	color:#fff;
 	width: 100% !important;
-	text-align:center;
 	height: 75px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+}
+
+#logOutButton{
+	float: right;
+	vertical-align: center;
+	padding:30px;
+}
+
+#logOutButton:hover{
+	cursor:pointer;
+}
+
+#searchBarDiv{
+	position: absolute;
+	left:1000px;
+	margin: 25px;
+	display: inline-block;
+	width: 150px;
+	height: 30px;
+	background-color:#ffffff;
+	box-shadow: 1px 1px 3px #9e471c;
+}
+
+#seachIcon{
+	float:left;
+	padding:100px;
+	width:25px;
+	color: #FF7733 !important;
+}
+
+#searchbar{
+	border: 0px;
+	height:30px;
+	float:left;
+	width: 125px;
+	color: #FF7733;
 }
 
 #pageTitle{
@@ -28,26 +96,36 @@ body{
 	font-size: 16px
 }
 
+.input-group{
+	text-align: center;
+	margin: 5px;
+}
+
+.form-control{
+	margin-left: 100px;
+	-webkit-appearance: none;
+	border-bottom: 1px solid #FF7733;
+}
+
 #txtLogo{
 	display: block;
 	margin: auto;
+	width:452px;
+	height: 304px;
 }
 
 #loginContainer{
 	float:left;
 	font-family: 'Open Sans', sans-serif;
-	width:250px;
+	width:40%;
 	text-align:center;
 	padding-left: 30px;
-	height:200px;
+	height:1000px;
 }
 
-.centered {
-  position: fixed;
-  top: 40%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
+#loginInputContainer{
+	text-align: center;
+	padding-top: 250px;
 }
 
 .logInIcon{
@@ -56,38 +134,40 @@ body{
 }
 
 #logIn{
+	text-align: center;
 	margin-top: 30px;
-	background-color: #70C8F0;
-	border:1px solid #70C8F0;
+	background-color: #FF7733;
+	border:1px solid #FF7733;
 	width: 220px;
 	color: #fff;
 	height:40px;
-	border-radius: 5px;
+}
+
+#divLogin{
+	width: 500px;
+	padding-top:125px;
+	display: block;
+	margin: auto;
 }
 
 #loginPageContainer{
-	width: 750px;
-	height:300px;
-	height:200px;
+	width: 100%;
+	height: 1000px;
 }
 
 #welcomeLogIn{
 	text-align: center;
 	float:left;
-	width:400px;
-	border-right: 2px solid #70C8F0;
-	height: 200px;
-}
-
-#logOutButton{
-	float: right;
-	vertical-align: center;
-	padding:30px;
+	width:60%;
+	height: 100%;
+	background-color: #FF7733;
 }
 
 #loginWelcome{
-	padding-bottom: 10px;
-	color: #70C8F0;
+	position: relative;
+	top: -50px;
+	font-size: 40px;
+	color: #FF7733;
 }
 
 .white{
@@ -95,7 +175,10 @@ body{
 }
 
 #welcomeP{
-	color: #70C8F0;
+	width:500px;
+	font-size: 26px;
+	font-weight: 500;
+	color: #ffffff;
 }
 
 #trafficTable{
