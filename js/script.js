@@ -31,7 +31,8 @@ myApp.controller('login', ['$scope','$http','$state','$location','$timeout',func
 			$state.go('trafficHistory');
 
 		}else{
-			alert('ERROR WRONG LOGIN')
+			alert('ERROR WRONG LOGIN');
+			
 		}
 	}
 
