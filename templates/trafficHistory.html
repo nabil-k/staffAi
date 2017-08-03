@@ -3,7 +3,7 @@
 		<!-- Searchbar -->
 		<div id="searchBarDiv">
 			<i id="searchIcon" class="fa fa-search" aria-hidden="true"></i>
-			<input id="searchbar" type="text">
+			<input ng-model="searchLogs" id="searchbar" type="text">
 		</div>
 		<!-- logOut button-->
 		<span id="logOutButton" ui-sref="login" class="hvr-grow">Log Out</span>
@@ -23,7 +23,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="user in users">
+					<tr ng-repeat="user in users | filter:searchLogs"">
 					<td>{{user.name}}</td>
 					<td>{{user.traffic}}</td>
 					<td>{{user.date}}</td>
