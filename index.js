@@ -2,6 +2,7 @@ var express = require('express');
 var mongo = require('mongodb');
 var mongoose = require("mongoose");
 var app = express();
+var Schema = mongoose.Schema;
 var db = mongoose.connection;
 var userJS = require("./user.js");
 var User = require('./user');
@@ -13,6 +14,7 @@ var cors = require('cors');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 var url = 'mongodb://admin:admin@ds119223.mlab.com:19223/cube-traffic';
+
 // Imports
 // var myModule = require('./js/voice-rec');
 // var userName = myModule.userName;
@@ -36,20 +38,43 @@ mongoose.connect(url, function(err){
 
 });
 
-var collection;
+var userCollection;
+var credentialCollection;
+var credentials;
+userLogin = null;
+passLogin = null;
+
 MongoClient.connect(url, function(err, db) {
     if(err){
         console.log("Error connecting")
         process.close(1);
     }else{
-        // Specifying collection. You can suse multiple connections.
-        collection = db.collection('users');
-        console.log("Connected correctly to mongo");
+      // Specifying collection. You can use multiple connections.
+      credentialCollection = db.collection('adminPass');
+      userCollection = db.collection('users');
+      console.log("Connected correctly to mongo");
+      // Assigns values for Username and Password
+      credentialCollection.findOne({},{username:1, password:1}, function(err, item) {
+        if(err){
+          console.log('error has occured');
+        }
+        if(item){
+
+          
+          userLogin = item.username;
+          passLogin = item.password;
+          credentials = {
+            "username":userLogin,
+            "password":passLogin
+          }
+
+          console.log(credentials);
+        }
+      })
     }
 });
-
-
-app.get('/users',function(req,res){
+// Gets all of the user's logs
+app.get('/user',function(req,res){
 	User.find({})
 	.exec(function(err,users){
 
@@ -57,11 +82,16 @@ app.get('/users',function(req,res){
 			res.send('error has occured');
 		}else{
 			res.json(users);
-			console.log(users)
 		}
 
 	});
 })
+
+app.get('/credentials',function(req,res){
+  res.json(credentials)
+})
+
+
 
 // app.get('/users', function(req,response){
 //     User.find({}, { name: true }, function(err, users) {
@@ -82,4 +112,5 @@ app.get('/users',function(req,res){
 var port = process.env.PORT || 8000;
 app.listen(port, () => console.log("listening on  " + port));
 // var User = mongoose.model("User", userSchema);
+
 

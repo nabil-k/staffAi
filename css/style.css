@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,400');
 
+html,body{
+	height: 100%
+}
+
 body{
+	background-size: auto 100%;
 	margin: 0px;
 	background-color: #fff;
 }
@@ -34,7 +39,7 @@ body{
     padding: 1px;
  }
 
-#trafficheader{
+.trafficheader{
 	background-color: #FF7733;
 	border-color: #FF7733;
 	color:#fff;
@@ -42,6 +47,7 @@ body{
 	height: 75px;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 100;
+	text-align: center;
 }
 
 #logOutButton{
@@ -78,8 +84,9 @@ body{
 	color: #FF7733;
 }
 
-#pageTitle{
+.pageTitle{
 	display:inline-block;
+	text-align: center;
 }
 
 .contentDiv{
@@ -101,15 +108,25 @@ body{
 
 .form-control{
 	border: none;
-	margin-left: 100px;
-	-webkit-appearance: none;
+	width: 300px !important;
+	display: block !important;
+	margin: 0 auto !important;
 	border-bottom: 1px solid #FF7733;
+	border-radius: 0px;
+	clear: both !important;
+	margin-bottom: 10px !important;
+}
+
+#error-text{
+	color: #f30;
+	font-weight: bold;
 }
 
 #txtLogo{
 	display: block;
-	margin: auto;
-	width:60%;
+	margin-left: auto;
+	margin-right: auto;
+	width:30%;
 }
 
 #loginContainer{
@@ -118,7 +135,7 @@ body{
 	width:40%;
 	text-align:center;
 	padding-left: 30px;
-	height:1000px;
+	height:100%;
 }
 
 #loginInputContainer{
@@ -138,14 +155,14 @@ body{
 
 #divLogin{
 	width: 500px;
-	padding-top:205px;
+	padding-top:250px;
 	display: block;
 	margin: auto;
 }
 
 #loginPageContainer{
 	width: 100%;
-	height: 1000px;
+	height: 100%;
 }
 
 #welcomeLogIn{
@@ -158,7 +175,7 @@ body{
 
 #loginWelcome{
 	position: relative;
-	top: -50px;
+	top: -25px;
 	font-size: 40px;
 	color: #FF7733;
 }
@@ -172,6 +189,7 @@ body{
 	font-size: 26px;
 	font-weight: 500;
 	color: #ffffff;
+	margin-bottom: 0px;
 }
 
 #trafficTable{
