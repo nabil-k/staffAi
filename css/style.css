@@ -139,8 +139,8 @@ body{
 }
 
 #loginInputContainer{
-	text-align: center;
-	padding-top: 250px;
+	text-align: center !important;
+	padding-top: 250px !important;
 }
 
 #logIn{

@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp',['ui.router']);
+var myApp = angular.module('myApp',['ui.router','ngSanitize']);
 //Website Routes
 myApp.config(function($stateProvider,$urlRouterProvider) {
     $urlRouterProvider.otherwise('/login');
@@ -23,7 +23,7 @@ myApp.config(function($stateProvider,$urlRouterProvider) {
 document.loggedIn;
 
 //Login Controller
-myApp.controller('login', ['$scope','$http','$state','$location','$timeout',function($scope,$http,$state,$location,$timeout){
+myApp.controller('login', ['$scope','$http','$state','$location','$timeout','$sce', function($scope,$http,$state,$location,$timeout,$sce){
 
 	var usernamePass;
 	var passwordPass;
@@ -50,6 +50,7 @@ myApp.controller('login', ['$scope','$http','$state','$location','$timeout',func
 	logInButton.onclick = function($location){
 		var usernameInput = document.getElementById('username').value;
 		var passwordInput = document.getElementById('password').value;
+
 		if(usernameInput == usernamePass & passwordInput == passwordPass){
 			document.loggedIn = 'true';
 			$state.go('trafficHistory');

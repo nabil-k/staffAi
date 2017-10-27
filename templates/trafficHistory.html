@@ -24,10 +24,10 @@
 				</thead>
 				<tbody>
 					<tr ng-repeat="user in users | filter:searchLogs"">
-					<td>{{user.name}}</td>
-					<td>{{user.traffic}}</td>
-					<td>{{user.date}}</td>
-					<td>{{user.time}}</td>
+					<td>{{user.fullName}}</td>
+					<td>{{user.profileId}}</td>
+			   <!-- <td>{{user.date}}</td>
+					<td>{{user.time}}</td> -->
 					</tr>
 				</tbody>
 			</table>
