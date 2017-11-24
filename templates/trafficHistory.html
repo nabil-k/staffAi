@@ -23,11 +23,11 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="user in users | filter:searchLogs"">
-					<td>{{user.fullName}}</td>
-					<td>{{user.profileId}}</td>
-			   <!-- <td>{{user.date}}</td>
-					<td>{{user.time}}</td> -->
+					<tr ng-repeat="trafficQuery in traffic | filter:searchLogs"">
+					<td>{{trafficQuery.fullName}}</td>
+					<td>{{trafficQuery.trafficQuery}}</td>
+			   		<td>{{trafficQuery.date}}</td>
+					<td>{{trafficQuery.time}}</td>
 					</tr>
 				</tbody>
 			</table>

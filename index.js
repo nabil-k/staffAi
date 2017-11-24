@@ -5,7 +5,7 @@ var app = express();
 var Schema = mongoose.Schema;
 var db = mongoose.connection;
 var userJS = require("./user.js");
-var User = require('./user');
+var UserTraffic = require('./user');
 var MongoClient = require('mongodb').MongoClient;
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
@@ -38,7 +38,7 @@ mongoose.connect(url, function(err){
 
 });
 
-var userCollection;
+var collection;
 var credentialCollection;
 var credentials;
 userLogin = null;
@@ -50,8 +50,9 @@ MongoClient.connect(url, function(err, db) {
         process.close(1);
     }else{
       // Specifying collection. You can use multiple connections.
+      collection = db.collection('traffic')
       credentialCollection = db.collection('adminPass');
-      userCollection = db.collection('users');
+
       console.log("Connected correctly to mongo");
       // Assigns values for Username and Password
       credentialCollection.findOne({},{username:1, password:1}, function(err, item) {
@@ -71,42 +72,30 @@ MongoClient.connect(url, function(err, db) {
           console.log(credentials);
         }
       })
+
     }
 });
 // Gets all of the user's logs
-app.get('/user',function(req,res){
-	User.find({})
-	.exec(function(err,users){
+app.get('/traffic',function(req,res){
+  UserTraffic.find({})
+  .exec(function(err,collection){
 
-		if(err){
-			res.send('error has occured');
-		}else{
-			res.json(users);
-		}
+    if(err){
+      res.send('error has occured');
+    }else{
+      res.json(collection);
+      console.log(collection)
+    }
 
-	});
+  });
 })
+
 
 app.get('/credentials',function(req,res){
   res.json(credentials)
 })
 
 
-
-// app.get('/users', function(req,response){
-//     User.find({}, { name: true }, function(err, users) {
-//         response.json(users);
-//     });
-// });
-
-//Schema
-// var userSchema = new mongoose.Schema({
-//   name: String,
-//   trafficQuery: String,
-//   date: Number
-// });
-
-// Middle Ware
 
 //Sets port
 var port = process.env.PORT || 8000;

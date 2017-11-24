@@ -4,12 +4,23 @@ var Schema = mongoose.Schema;
 //module used to encrypt password data
 
 
-var UserSchema = new Schema({
-	name:{type: String},
-	traffic:{type: String},
+var UserTrafficSchema = new Schema({
+	fullName:{type: String},
+	profileId:{type: String},
+	trafficQuery:{type: String},
 	date:{type: String},
 	time:{type: String}
+}, {collection: 'traffic'});
 
-});
+module.exports = mongoose.model('UserTraffic', UserTrafficSchema);
 
-module.exports = mongoose.model('User', UserSchema);
+// var UserSchema = new Schema({
+// 	name:{type: String},
+// 	traffic:{type: String},
+// 	date:{type: String},
+// 	time:{type: String}
+
+// });
+
+// module.exports = mongoose.model('User', UserSchema);
+

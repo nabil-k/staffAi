@@ -66,8 +66,9 @@ myApp.controller('login', ['$scope','$http','$state','$location','$timeout','$sc
 
 //Traffic History Controller
 myApp.controller('trafficHistory', ['$scope','$location','$http','$rootScope','$state', function($scope,$location,$http,$rootScope,$state){
-	$http.get('/user').then(function(data) {
-		$scope.users = data.data;
+	
+	$http.get('/traffic').then(function(data) {
+		$scope.traffic = data.data;
 	})
 
 	var logOutButton = document.getElementById('logOutButton');
